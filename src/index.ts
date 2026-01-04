@@ -8,7 +8,18 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send({ message: "Welcome to backed" });
+  res.json({ message: "Welcome to backed" });
+});
+app.post("/", (req, res) => {
+  res.json({ message: "This is post Api" });
+});
+
+app.patch("/", (req, res) => {
+  res.json({ message: "Welcome to patch api " });
+});
+
+app.delete("/users", (req, res) => {
+  res.json({ message: "Welcome to delete api " });
 });
 
 app.listen(PORT, () => {
